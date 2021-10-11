@@ -1,0 +1,8 @@
+\begin{abstract}
+	Deep neural network (DNN) accelerators
+	received considerable attention in past years due to saved energy compared to mainstream hardware. Low-voltage operation of DNN accelerators allows to further reduce energy consumption significantly, however, causes bit-level failures in the memory storing the quantized DNN weights.
+	In this paper, we show that a combination of \textbf{robust fixed-point quantization}, 
+	\textbf{weight clipping}, and \textbf{random bit error training (\Random)}
+    \textbf{improves robustness against random bit errors in (quantized) DNN weights} significantly.
+    This leads to high energy savings from \emph{both} low-voltage operation \emph{as well as} low-precision quantization. Our approach generalizes across operating voltages and accelerators, as demonstrated on bit errors from profiled SRAM arrays. We also discuss why weight clipping alone is already a quite effective way to achieve robustness against bit errors. Moreover, we specifically discuss the involved trade-offs regarding accuracy, robustness and precision: Without losing more than $1\%$ in accuracy compared to a normally trained $8$-bit DNN, we can reduce energy consumption on \CifarT by $20\%$. Higher energy savings of, \eg, $30\%$, are possible at the cost of $2.5\%$ accuracy, even for $4$-bit DNNs.
+\end{abstract}

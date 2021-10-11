@@ -1,0 +1,76 @@
+\footnotesize
+\begin{tabular}{|l|c|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{SimpleNet} on \textbf{\CifarT}}\\
+    \hline
+    Layer & Output Size\\
+    & $N_C, N_H, N_W$\\
+    \hline
+    \hline
+    %clamp & $3, 32, 32$\\
+    %onv1 & $64, 32, 32$\\
+    %fixedgn1 & $64, 32, 32$\\
+    %relu1 & $64, 32, 32$\\
+    Conv+GN+ReLU & $64, 32, 32$\\
+    %conv2 & $128, 32, 32$\\
+    %fixedgn2 & $128, 32, 32$\\
+    %relu2 & $128, 32, 32$\\
+    Conv+GN+ReLU & $128, 32, 32$\\
+    %conv3 & $128, 32, 32$\\
+    %fixedgn3 & $128, 32, 32$\\
+    %relu3 & $128, 32, 32$\\
+    Conv+GN+ReLU & $128, 32, 32$\\
+    %conv4 & $128, 32, 32$\\
+    %fixedgn4 & $128, 32, 32$\\
+    %relu4 & $128, 32, 32$\\
+    Conv+GN+ReLU & $128, 32, 32$\\
+    Pool & $128, 16, 16$\\
+    %conv5 & $128, 16, 16$\\
+    %fixedgn5 & $128, 16, 16$\\
+    %relu5 & $128, 16, 16$\\
+    Conv+GN+ReLU & $128, 16, 16$\\
+    %conv6 & $128, 16, 16$\\
+    %fixedgn6 & $128, 16, 16$\\
+    %relu6 & $128, 16, 16$\\
+    Conv+GN+ReLU & $128, 16, 16$\\
+    %conv7 & $256, 16, 16$\\
+    %fixedgn7 & $256, 16, 16$\\
+    %relu7 & $256, 16, 16$\\
+    Conv+GN+ReLU & $256, 16, 16$\\
+    Pool & $256, 8, 8$\\
+    %conv8 & $256, 8, 8$\\
+    %fixedgn8 & $256, 8, 8$\\
+    %relu8 & $256, 8, 8$\\
+    Conv+GN+ReLU & $256, 8, 8$\\
+    %conv9 & $256, 8, 8$\\
+    %fixedgn9 & $256, 8, 8$\\
+    %relu9 & $256, 8, 8$\\
+    Conv+GN+ReLU & $256, 8, 8$\\
+    Pool & $256, 4, 4$\\
+    %conv10 & $512, 4, 4$\\
+    %fixedgn10 & $512, 4, 4$\\
+    %relu10 & $512, 4, 4$\\
+    Conv+GN+ReLU & $512, 4, 4$\\
+    Pool & $512, 2, 2$\\
+    %conv11 & $2048, 2, 2$\\
+    %fixedgn11 & $2048, 2, 2$\\
+    %relu11 & $2048, 2, 2$\\
+    Conv+GN+ReLU & $2048, 2, 2$\\
+    %conv12 & $256, 2, 2$\\
+    %fixedgn12 & $256, 2, 2$\\
+    %relu12 & $256, 2, 2$\\
+    Conv+GN+ReLU & $256, 2, 2$\\
+    Pool & $256, 1, 1$\\
+    %conv13 & $256, 1, 1$\\
+    %fixedgn13 & $256, 1, 1$\\
+    %relu13 & $256, 1, 1$\\
+    Conv+GN+ReLU & $256, 1, 1$\\
+    Avg Pool & $256, 1, 1$\\
+    %view13 & $256$\\
+    FC & $10$\\
+    \hline
+    \hline
+    %$W$, fixed GN & 5,489,290\\
+    $W$ & 5,498,378\\
+    \hline
+\end{tabular}

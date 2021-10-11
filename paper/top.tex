@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\RequirePackage{snapshot}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+\usepackage[accepted]{mlsys2021}
+\mlsystitlerunning{Bit Error Robustness for Energy-Efficient DNN Accelerators}
+
+\input{commands}
+\begin{document} 
+
+\twocolumn[
+\mlsystitle{Bit Error Robustness for Energy-Efficient DNN Accelerators}
+\mlsyssetsymbol{equal}{*} 
+
+\begin{mlsysauthorlist}
+\mlsysauthor{David Stutz}{mpii}
+\mlsysauthor{Nandhini Chandramoorthy}{ibm}
+\mlsysauthor{Matthias Hein}{tue}
+\mlsysauthor{Bernt Schiele}{mpii}
+\end{mlsysauthorlist}
+
+\mlsysaffiliation{mpii}{Max Planck Institute for Informatics}
+\mlsysaffiliation{ibm}{IBM T. J. Watson Research Center}
+\mlsysaffiliation{tue}{University of T\"{u}bingen}
+
+\mlsyscorrespondingauthor{David Stutz}{david.stutz@mpi-inf.mpg.de}
+\mlsyskeywords{Robustness, Accelerators, Bit Errors, Quantization, Weight Clipping}
+ 
+\vskip 0.3in
+
+\input{sec_abstract}
+]
+
+\printAffiliationsAndNotice{}
+
+
+\input{sec_introduction}
+\input{sec_related_work}
+\input{sec_main}
+\input{sec_experiments}
+\input{sec_conclusion}
+
+\bibliography{bibliography}
+\bibliographystyle{mlsys2021}
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setcounter{dbltopnumber}{2}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\dblfloatpagefraction}{0.8}
+
+\vfill
+\pagebreak
+\begin{appendix}
+	\input{supp_introduction}
+	\input{supp_related_work}
+	\input{supp_main}
+	\input{supp_experiments}
+\end{appendix}
+
+\end{document}

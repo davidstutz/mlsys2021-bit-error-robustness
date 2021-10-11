@@ -1,0 +1,65 @@
+\footnotesize
+\begin{tabular}{|l|c|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{SimpleNet} on \textbf{MNIST}}\\
+    \hline
+    Layer & Output Size\\
+    & $N_C, N_H, N_W$\\
+    \hline
+    \hline
+    %conv1 & $32, 28, 28$\\
+    %fixedgn1 & $32, 28, 28$\\
+    %relu1 & $32, 28, 28$\\
+    Conv+GN+ReLU & $32, 28, 28$\\
+    %conv2 & $64, 28, 28$\\
+    %fixedgn2 & $64, 28, 28$\\
+    %relu2 & $64, 28, 28$\\
+    Conv+GN+ReLU & $64, 28, 28$\\
+    %conv3 & $64, 28, 28$\\
+    %fixedgn3 & $64, 28, 28$\\
+    %relu3 & $64, 28, 28$\\
+    Conv+GN+ReLU & $64, 28, 28$\\
+    %conv4 & $64, 28, 28$\\
+    %fixedgn4 & $64, 28, 28$\\
+    %relu4 & $64, 28, 28$\\
+    Conv+GN+ReLU & $64, 28, 28$\\
+    Pool & $64, 14, 14$\\
+    %conv5 & $64, 14, 14$\\
+    %fixedgn5 & $64, 14, 14$\\
+    %relu5 & $64, 14, 14$\\
+    Conv+GN+ReLU & $64, 14, 14$\\
+    %conv6 & $64, 14, 14$\\
+    %fixedgn6 & $64, 14, 14$\\
+    %relu6 & $64, 14, 14$\\
+    Conv+GN+ReLU & $64, 14, 14$\\
+    %conv7 & $128, 14, 14$\\
+    %fixedgn7 & $128, 14, 14$\\
+    %relu7 & $128, 14, 14$\\
+    Conv+GN+ReLU & $128, 14, 14$\\
+    Pool & $128, 7, 7$\\
+    %conv8 & $256, 7, 7$\\
+    %fixedgn8 & $256, 7, 7$\\
+    %relu8 & $256, 7, 7$\\
+    Conv+GN+ReLU & $256, 7, 7$\\
+    %conv9 & $1024, 7, 7$\\
+    %fixedgn9 & $1024, 7, 7$\\
+    %relu9 & $1024, 7, 7$\\
+    Conv+GN+ReLU & $1024, 7, 7$\\
+    %conv10 & $128, 7, 7$\\
+    %fixedgn10 & $128, 7, 7$\\
+    %relu10 & $128, 7, 7$\\
+    Conv+GN+ReLU & $128, 7, 7$\\
+    Pool & $128, 3, 3$\\
+    %conv11 & $128, 3, 3$\\
+    %fixedgn11 & $128, 3, 3$\\
+    %relu11 & $128, 3, 3$\\
+    Conv+GN+ReLU & $128, 3, 3$\\
+    Avg Pool & $128, 1, 1$\\
+    %view11 & $128$\\
+    FC & $10$\\
+    \hline
+    \hline
+    %$W$, fixed GN & 1,078,794\\
+    $W$ & 1,082,826\\
+    \hline
+\end{tabular}

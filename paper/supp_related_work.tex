@@ -1,0 +1,37 @@
+\section{Related Work}
+\label{sec:supp-related-work}
+
+\begin{table*}[t]
+    \centering
+   	\caption{\textbf{Architectures, Number of Weights $\mathbf{W}$, Expected Number of Bit Errors.} \textit{Left and Middle:} SimpleNet architectures used for \MNIST and \CifarT with the corresponding output sizes, channels $N_C$, height $N_H$ and width $N_W$, and the total number of weights $W$. We use group normalization \emph{with} learnable scale/bias, but reparameterized as outlined in \appref{sec:supp-clipping}. \textit{Right:} The number of expected bit errors for random bit errors, \ie, $pmW$.}
+    \label{tab:supp-architectures}
+    \vspace*{-0.25cm}
+    \begin{subfigure}[t]{.30\textwidth}
+        \vspace*{0px}
+    
+        \input{tab_mnist_architecture}
+    \end{subfigure}
+    \begin{subfigure}[t]{.30\textwidth}
+        \vspace*{0px} 
+        
+        \input{tab_cifar10_architecture}
+    \end{subfigure}
+    \begin{subfigure}[t]{.20\textwidth}
+        \vspace*{0px}
+        
+        \input{tab_mnist_epsilon}
+        
+        \input{tab_cifar10_epsilon}
+    \end{subfigure}
+    \vspace*{-0.1cm}
+\end{table*}
+
+In the following, we briefly review work on adversarial robustness, fault tolerance, backdooring and quantization. These areas are broadly related to the topic of the main paper.
+
+\textbf{Adversarial and Corruption Robustness:} Robustness of DNNs against adversarially perturbed or randomly corrupted inputs received considerable attention in recent years, see, \eg, relevant surveys \citep{BiggioARXIV2018,XuARXIV2019}. Adversarial examples \citep{SzegedyARXIV2013}, \ie, nearly imperceptibly perturbed inputs causing misclassification, consider an adversarial environment where potential attackers can actively manipulate inputs. This has been shown to be possible in the white-box setting, with full access to the DNN, \eg, \citep{MadryICLR2018,CarliniSP2017,DongARXIV2017,ChiangARXIV2019,CroceARXIV2020}, as well as in the black-box setting, without access to DNN weights and gradients, \eg, \citep{ChenAISEC2017,IlyasICML2018,CroceARXIV2019,AndriushchenkoARXIV2019}. Such attacks are also transferable between models \citep{LiuARXIV2016} and can be applied in the physical world \citep{LuARXIV2017,KurakinARXIV2016b}. Obtaining robustness against adversarial inputs is challenging, recent work focuses on achieving certified/provable robustness \citep{PeckNIPS2017,ZhangNIPS2018,WongICML2018,GorwalARXIV2019} and variants of adversarial training \citep{MiyatoARXIV2015,HuangARXIV2015,MadryICLR2018}, \ie, training on adversarial inputs generated on-the-fly. Adversarial training has been shown to work well empirically, and flaws such as reduced accuracy \citep{StutzCVPR2019,TsiprasICLR2019} or generalization to attacks not seen during training has been addressed repeatedly \citep{CarmonARXIV2019,UesatoARXIV2019,StutzICML2020,TramerARXIV2019,MainiARXIV2019}. Adversarial inputs have also been considered for quantized DNNs \citep{KhalilICLR2019}. Corrupted inputs, in contrast, consider ``naturally'' occurring corruptions to which robustness/invariance is desirable for practical applications. Popular benchmarks such as MNIST-C \citep{MuICMLWORK2019}, Cifar10-C or ImageNet-C \citep{HendrycksARXIV2019} promote research on corruption robustness by extending standard datasets with common corruptions, \eg, blur, noise, saturation changes \etc. It is argued that adversarial robustness, and robustness to random corruptions is related. Approaches are often similar, \eg, based on adversarial training \citep{StutzICML2020,LopesICMLWORK2019,KangARXIV2019}. In contrast, we consider random bit errors in the weights, not the inputs.
+
+\textbf{Fault Tolerance:} Fault tolerance, describes structural changes such as removed units, and has been studied in early works such as \citep{AlippiISCAS1994,NetiTNN1992,Chiu1994}. These approaches obtain fault tolerant NNs using approaches similar to adversarial training \citep{DeodhareTNN1998,LeeICASSP2014}.
+\revision{Recently, hardware mitigation strategies \cite{MarquesSIPS2017}, weight regularization \citep{RahmanICIP2018,DeyTSMCS2018,LeungTNN2010}, fault detection \cite{XiaDAC2017} or GAN-based training \citep{DudduARXIV2019} has been explored. Generally, a wide range of different faults/errors are considered, including node faults \cite{LeeICASSP2014,DeodhareTNN1998}, hardware soft errors \cite{AziziMazreahNAS2018}, timing errors \cite{DengDATE2015} or transient errors in general \cite{SalamiSBACPAD2018}. However, to the best of our knowledge, large rates of non-transient bit errors provoked through low-voltage operation has not been considered. Nevertheless, some of these approaches are related to ours in spirit: \cite{DuASPDAC2014} consider inexact computation for energy-efficiency and \cite{CavalieriOJINN1999,KlachkoIJCNN2019,HoangDATE2020} constrain weights and/or activations to limit the impact of various errors -- similar to our weight clipping.}
+Additionally, fault tolerance of adversarially robust models has been considered in \citep{DudduARXIV2019b}. We refer to \citep{TorreshuitzilIEEEACCESS2017} for a comprehensive survey. In contrast, we do \emph{not} consider structural changes/errors in DNNs.
+
+\textbf{Backdooring:} The goal of backdooring is to introduce a backdoor into a DNN, allowing to control the classification result by fixed input perturbations at test time. This is usually achieved through data poisoning  \citep{LiuNDSS2018,LiaoARXIV2018,ZhangASIACCS2018}. However, some works also consider directly manipulating the weights \citep{JiCCS2018,DumfordARXIV2018}. However, such weight perturbations are explicitly constructed not to affect accuracy on test examples without backdoor. In contrast, we consider random bit errors (\ie, weight perturbations) that degrade accuracy significantly.
